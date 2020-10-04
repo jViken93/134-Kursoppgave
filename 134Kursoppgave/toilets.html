@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style3.css">
+    <!-- javscript -->
+    <script type="text/javascript" src=js/loadFile.js ></script>
+    <script type="text/javascript" src=js/toilet.js ></script>
+    <!-- fonter som brukes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Montserrat:200" rel="stylesheet">
+    <title>BSG - Toalettguiden</title>
+  </head>
+  <body class="flexcontainer">
+    <header class="menu">
+      <nav class="navbar">
+        <img src="media/menu.png" id="menuicon">
+        <ul>
+          <li><a href="index.html"> Hjem </a></li>
+          <li><a href="toilets.html"> Toalettguiden </a></li>
+          <li><a href="playgrounds.html"> Lekeguiden </a></li>
+          <li><a href="kindergarten.html"> Barnehageguiden </a></li>
+          <li><a href="myFavorite.html"> Favoritter </a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="subcontent" id="mapcontent">
+      <h2>Toaletter i Bergen Sentrum</h2>
+        <p> Bergen er kjent for å ha en svært begrenset utvalg av offentlige toaletter. Men med litt hjelp
+          (av oss) vil du finne et på null komma niks. </br> Velg et fra listen under, eller søk etter et toalett
+          som passer for deg.
+        </p>
+      <h3>Hvordan bruke søkefunksjonen</h3>
+      <p>For å utføre hurtigsøk, støttes disse søkekriteriene: </br>
+        Herre, mann, dame, lady (evt. "Kjønn:Mann"), rullestol, </br> rullestoltilgang,
+        stellerom, skifterom, open, åpen, gratis. </p>
+        <p> Det er et par ting å huske på når du skal foreta et avansert søk:</br>
+          For å søke på pris må du skrive "pris:" før du skriver ønsket pris. </br>
+          F.eks. "pris:12". </br>
+          For å søke på tid må du huske å ha kolon eller punktum ( : / . ) på korrekt sted. </br>
+          F.eks. "16:00" eller "16.00". </br>
+          Avslutt det hele med å trykke på søk. Ps. du trenger ikke fylle inn alle søke-boksene.
+        </p>
+    </section>
+    <section class="searchcontainer">
+      <input type="text" placeholder="fritt søk blant toaletter" name="search" id="search"/>
+      <input type="text" placeholder="avansert søk klokkeslett" name="clockSearch" id="clokcSearch"/>
+      <input type="text" placeholder="avansert søk pris" name="priceSearch" id="priceSearch"/>
+      <button onclick="search()">Søk</button>
+    </section>
+    <div class="boxcontainer">
+      <span>
+        <input name="herre" type="checkbox" value="herre" class="checked" onclick="search()"/>
+        <label for="person">Herre</label>
+      </span>
+
+      <span>
+        <input name="dame" type="checkbox" value="Dame" class="checked" onclick="search()"/>
+        <label for="person">Dame</label>
+      </span>
+
+      <span>
+        <input name="rullestol" type="checkbox" value="Rullestol" class="checked" onclick="search()"/>
+        <label for="person">Rullestol</label>
+      </span>
+
+      <span>
+        <input name="stellerom" type="checkbox" value="stellerom" class="checked" onclick="search()"/>
+        <label for="person">Stellerom</label>
+      </span>
+
+      <span>
+      <input name="gratis" type="checkbox" value="gratis" class="checked" onclick="search()"/>
+      <label for="gratis">Gratis</label>
+      </span>
+
+      <span>
+      <input name="open" type="checkbox" value="open" class="checked" onclick="search()"/>
+      <label for="open">Åpen</label>
+      </span>
+    </div>
+
+
+      <ul id="myList" class="tlist">
+      </ul>
+
+    <!-- Google maps -->
+    <div id="map">Error. Kart ikke tilgjengelig.</div>
+      <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0TEcHBOh1EO0BHnw-NR-L0eeJKN_OS5g&callback=loadMap">
+      </script>
+    <footer class="footer">
+      <p>Bergen Småbarn Guides</p>
+      <p>|</p>
+      <p>pleasedontcontactus@bsguides.com</p>
+    </footer>
+  </body>
+</html>

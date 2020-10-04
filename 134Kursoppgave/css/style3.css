@@ -1,0 +1,361 @@
+/*basic styling*/
+body {
+  margin: 0;
+}
+head, main, nav {
+  margin: auto;
+}
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/*meny styling*/
+.menu {
+  width: 100%;
+  top: 0;
+}
+.navbar {
+  width: 100%;
+  position: fixed;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  padding-top: 0px;
+  margin-top: 0px;
+  font-family: 'Lato', sans-serif;
+  z-index: 110; /*får menyen over kartet*/
+}
+nav li {
+  display: none;
+  padding-top: 25px;
+}
+nav:hover li {
+  display: block;
+}
+#menuicon {
+  width: 36px;
+  float:right;
+  padding: 8px;
+  cursor: pointer;
+}
+/*banner bilde*/
+#banner {
+  background-image: url(../media/brgn.jpg);
+  background-size: cover;
+  background-position: top center;
+  height: 650px;
+  width: 100%;
+}
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: #646869;
+}
+h3 {
+  font-family: 'Lato', sans-serif;
+  color: #646869;
+  font-size: large;
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: medium;
+  line-height: 2;
+}
+/*forside styling*/
+#fpcontent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+#fptext {
+  text-align: center;
+}
+#fptext p {
+    padding: 0 15% 0 15%;
+}
+#fppic {
+margin: auto;
+text-align: center;
+}
+#fppic img {
+  width: 100%;
+  padding-top: 20px;
+}
+/*generell kart styling*/
+#map {
+  align-content: space-between;
+  justify-content: center;
+  align-self: flex-end;
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+  position: relative;
+  z-index: 100; /*legger kartet under menyen*/
+}
+#mapsection {
+  width: 100%;
+}
+/*søkebokser*/
+.searchcontainer, .boxcontainer {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.searchcontainer input {
+    padding-left: 5px;
+    margin-left: 5px;
+}
+.advanced {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.searchcontainer, #b2 {
+    border-top: solid #F0F4F5 2px;
+}
+/*list og dropdown styling*/
+.tlist {
+  width: 100%;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.dropdown {
+  width: 100%;
+  padding: 3%;
+  font-family: 'Montserrat', sans-serif;
+
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+.favorite {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.favorite p, .favorite ul {
+  font-family: 'Montserrat', sans-serif;
+    list-style: circle;
+    width: 50%;
+}
+.pg h2 {
+  display: flex;
+  justify-content: center;
+}
+.plist ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.plist li {
+  list-style: none;
+  display: inline-block;
+  width: calc(100% / 1); /*en kollonne på små skjermer*/
+  font-family: 'Lato', sans-serif;
+}
+/*dropdown på barnehager*/
+.drop {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+}
+.dd {
+  position: relative;
+}
+#ddr {
+  background-color: red;
+}
+.ddButton {
+  background-color: #E1E8EB;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  margin-left: 5px;
+}
+.ddButton:hover, .ddButton:focus {
+    background-color: #f1f1f1;
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 105; /*gjør at dropdown kommer over kart men under meny*/
+}
+.dropdownContent p {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+.dropdownContent p:hover {
+  background-color: #E1E8EB
+}
+.show {
+  display:block;
+}
+/*slutt dropdown på barnehager*/
+.klist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  overflow-x:auto; /*gjør at man kan bla horisontalt på mobil/mindre skjermer*/
+}
+.klist h2 {
+  align-self: center;
+}
+.tlist li, tr {
+  list-style: none;
+  font-family: 'Lato', sans-serif;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+tr {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+}
+td, tr {
+  padding: 8px;
+}
+input[type=text] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+/*info på sider*/
+.subcontent {
+  margin-top: 65px;
+  margin-bottom: 40px;
+  align-content: space-between;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.subcontent p {
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+  align-items: center;
+}
+/*footer styling*/
+.footer {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #E1E8EB;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.footer p {
+ padding: 10px 20px;
+}
+/*media queries for større skjermer */
+@media only screen and (min-width: 768px) {
+  #menuicon {
+    display: none;
+  }
+  nav li {
+    display: inline-flex;
+    padding: 0px;
+  }
+  nav:hover li {
+    display: inline-flex;
+  }
+  .navbar {
+    align-content: space-between;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    word-spacing: 50px;
+    list-style: none;
+    font-size: 20px;
+    box-shadow: 5px 5px 20px #F0F4F5;
+  } /*endrer meny fra hamburgermeny til vanlig meny*/
+  a {
+    text-decoration: none;
+    color: rgb(19, 27, 64);
+  }
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: #862828;
+  }
+  .plist ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  .plist li {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 2); /*to kollonner for middels skjermer*/
+  }
+}
+@media only screen and (min-width: 1100px) {
+  #fpcontent {
+    flex-direction: row;
+    width: 100%
+  }
+  #fptext {
+      width: 50%;
+  }
+  #fptext p {
+      padding: 0 15% 0 15%;
+  }
+  #fppic {
+    width: 50%;
+  }
+  #fppic img {
+  width: 50%;
+  box-shadow: 10px 10px 12px #D7DEE0;
+  }
+  .plist ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  .plist li {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 4); /*fire kollonner for store skjermer*/
+  }
+}
+@media only screen and (min-width: 1500px) {
+  #fppic {
+    width: 60%;
+  }
+  #fppic img {
+    width: 60%;
+  }
+  .navbar {
+    word-spacing: 65px;
+  }
+}

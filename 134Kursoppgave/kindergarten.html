@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+    <!-- javascript -->
+    <script src=js/loadFile.js type="text/javascript"></script>
+    <script src=js/kindergarten.js type="text/javascript"></script>
+    <!-- fonter som brukes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Montserrat:200" rel="stylesheet">
+    <title>BSG - Barnehager</title>
+  </head>
+  <body class="flexcontainer">
+    <header class="menu">
+      <nav class="navbar">
+        <img src="media/menu.png" id="menuicon">
+        <ul>
+          <li><a href="index.html"> Hjem </a></li>
+          <li><a href="toilets.html"> Toalettguiden </a></li>
+          <li><a href="playgrounds.html"> Lekeguiden </a></li>
+          <li><a href="kindergarten.html"> Barnehageguiden </a></li>
+          <li><a href="myFavorite.html"> Favoritter </a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="subcontent">
+      <h2>Barnehager i Bergen Kommune</h2>
+      <p> Under finner du en oversikt over barnehager i Bergens sentrale strøk. Barnehagene er markert på kartet under,
+      og det er mulig å filtrere på ulike egenskaper for å tilpasse visningen. Kartet oppdateres deretter.</p>
+    </section>
+    <section class="drop">
+        <div class="dd">
+          <button onclick="showDropdown1()" class="ddButton"> Privat / Offentlig </button>
+            <div id="privatePublic" class="dropdownContent">
+              <p onclick="filter(this)">Vis private</p>
+              <p onclick="filter(this)">Vis offentlige</p>
+            </div>
+        </div>
+        <div class="dd">
+          <button onclick="showDropdown2()" class="ddButton"> Antall Barn </button>
+            <div id="antallBarn" class="dropdownContent">
+              <p onclick="filter(this)">0 - 40</p>
+              <p onclick="filter(this)">40 - 80</p>
+              <p onclick="filter(this)">80 +</p>
+            </div>
+        </div>
+        <div class="dd">
+          <button onclick="showDropdown3()" class="ddButton"> Aldersgruppe </button>
+            <div id="aldergruppe" class="dropdownContent">
+              <p onclick="filter(this)">1 - 5</p>
+              <p onclick="filter(this)">3 - 5</p>
+            </div>
+        </div>
+        <div class="dd">
+          <button onclick="reset()" class="ddButton" id="ddr"> Reset </button>
+        </div>
+    </section>
+    <!-- Google maps -->
+    <div id="map">Error. Kart ikke tilgjengelig.</div>
+      <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0TEcHBOh1EO0BHnw-NR-L0eeJKN_OS5g&callback=loadMap">
+      </script>
+    <section class="klist">
+      <h2>Oversikt over barnehager</h2>
+        <table id="myTable">
+            <tr id="tableHeader">
+                <td> Nr </td>
+                <td> Navn </td>
+                <td> Aldergruppe </td>
+                <td> Antall Barn </td>
+                <td> Eierform </td>
+            </tr>
+        </table>
+    </section>
+    <footer class="footer">
+      <p>Bergen Småbarn Guides</p>
+      <p>|</p>
+      <p>pleasedontcontactus@bsguides.com</p>
+    </footer>
+  </body>
+</html>
